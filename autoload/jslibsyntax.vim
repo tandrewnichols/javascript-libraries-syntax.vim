@@ -49,7 +49,8 @@ function! jslibsyntax#load()
       exec('let use = b:javascript_lib_use_'.lib)
     endif
     if use
-      let fn = s:path.'/syntax/'.lib.'.'.b:current_syntax.'.vim'
+      let syntax = get(g:, 'javascript_short_syntax', 0) && b:current_syntax ==? 'javascript' ? 'js' : b:current_syntax
+      let fn = s:path.'/syntax/'.lib.'.'.syntax.'.vim'
       if filereadable(fn)
         exe('source '.fnameescape(fn))
         let loaded = loaded + 1
