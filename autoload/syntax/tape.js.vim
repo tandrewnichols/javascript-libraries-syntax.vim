@@ -7,30 +7,30 @@
 
 
 syntax keyword jsTape test       containedin=ALLBUT,jsComment,jsLineComment,jsRegexpString,jsString,jsTemplate,jsTemplateSubstitution nextgroup=jsTdot
-syntax match   jsTdot            contained /\./ nextgroup=javascriptTMethods
-syntax keyword javascriptTMethods        contained skip onfinish onFailure createHarness only createStream
+syntax match   jsTdot            contained /\./ nextgroup=jsTMethods
+syntax keyword jsTMethods        contained skip onfinish onFailure createHarness only createStream
 
-syntax keyword jsTapeAssert t    containedin=ALLBUT,jsComment,jsLineComment,jsRegexpString,jsString,jsTemplate,jsTemplateSubstitution nextgroup=javascriptTAssertdot
-syntax match   javascriptTAssertdot      contained /\./ nextgroup=javascriptTAssertMethods
-syntax keyword javascriptTAssertMethods  contained plan end fail pass timeoutAfter skip ok notOk error
-syntax keyword javascriptTAssertMethods  contained equal notEqual deepEqual notDeepEqual deepLooseEqual notDeepLooseEqual
-syntax keyword javascriptTAssertMethods  contained throws dowsNotThrow test comment
+syntax keyword jsTapeAssert t    containedin=ALLBUT,jsComment,jsLineComment,jsRegexpString,jsString,jsTemplate,jsTemplateSubstitution nextgroup=jsTAssertdot
+syntax match   jsTAssertdot      contained /\./ nextgroup=jsTAssertMethods
+syntax keyword jsTAssertMethods  contained plan end fail pass timeoutAfter skip ok notOk error
+syntax keyword jsTAssertMethods  contained equal notEqual deepEqual notDeepEqual deepLooseEqual notDeepLooseEqual
+syntax keyword jsTAssertMethods  contained throws dowsNotThrow test comment
 
 " Define the default highlighting.
 " For version 5.7 and earlier: only when not done already
 " For version 5.8 and later: only when an item doesn't have highlighting yet
-if version >= 508 || !exists("did_requirejs_javascript_syntax_inits")
+if version >= 508 || !exists("did_requirejs_js_syntax_inits")
   if version < 508
-    let did_requirejs_javascript_syntax_inits = 1
+    let did_requirejs_js_syntax_inits = 1
     command -nargs=+ HiLink hi link <args>
   else
     command -nargs=+ HiLink hi def link <args>
   endif
 
   HiLink jsTape            Constant
-  HiLink javascriptTMethods        PreProc
+  HiLink jsTMethods        PreProc
   HiLink jsTapeAssert      Constant
-  HiLink javascriptTAssertMethods  PreProc
+  HiLink jsTAssertMethods  PreProc
 
   delcommand HiLink
 endif

@@ -5,62 +5,62 @@
 " Version:     1.2.3
 " URL:         http://backbonejs.org/
 
-syntax keyword jsBackbone Backbone containedin=ALLBUT,jsComment,jsLineComment,jsRegexpString,jsString,jsTemplate,jsTemplateSubstitution nextgroup=javascriptBDot
-syntax match   javascriptBDot     contained /\./ nextgroup=javascriptBObjects
-syntax keyword javascriptBObjects contained Collection Model View Events Router History Utility sync ajax emulateHTTP emulateJSON
+syntax keyword jsBackbone Backbone containedin=ALLBUT,jsComment,jsLineComment,jsRegexpString,jsString,jsTemplate,jsTemplateSubstitution nextgroup=jsBDot
+syntax match   jsBDot     contained /\./ nextgroup=jsBObjects
+syntax keyword jsBObjects contained Collection Model View Events Router History Utility sync ajax emulateHTTP emulateJSON
 
-syntax cluster javascriptBFunctions contains=javascriptBEvents,javascriptBModel,javascriptBCollection,javascriptBRouter,javascriptBHistory,javascriptBSync,javascriptBView,javascriptBUtility
-syntax cluster javascriptBAttrs contains=javascriptBModelAttrs,javascriptBCollectionAttrs,javascriptBRouterAttrs,javascriptBSyncAttrs,javascriptBViewAttrs
+syntax cluster jsBFunctions contains=jsBEvents,jsBModel,jsBCollection,jsBRouter,jsBHistory,jsBSync,jsBView,jsBUtility
+syntax cluster jsBAttrs contains=jsBModelAttrs,jsBCollectionAttrs,jsBRouterAttrs,jsBSyncAttrs,jsBViewAttrs
 
-syntax keyword javascriptBEvents contained on off trigger once listenTo stopListening listenToOnce
-syntax keyword javascriptBModel contained extend constructor initialize get set escape has unset clear
-syntax keyword javascriptBModel contained toJSON sync fetch save destroy validate validationError url parse
-syntax keyword javascriptBModel contained clone isNew hasChanged changedAttributes previous previousAttributes
-syntax keyword javascriptBCollection contained extend constructor initialize toJSON sync add remove reset set get at 
-syntax keyword javascriptBCollection contained push pop unshift shift slice length comparator sort pluck where 
-syntax keyword javascriptBCollection contained findWhere url parse clone fetch create
-syntax keyword javascriptBRouter contained extend constructor initialize route navigate execute
-syntax keyword javascriptBHistory contained start
-syntax keyword javascriptBSync contained ajax 
-syntax keyword javascriptBView contained extend constructor initialize setElement render remove delegateEvents undelegateEvents
-syntax keyword javascriptBUtility contained noConflict 
+syntax keyword jsBEvents contained on off trigger once listenTo stopListening listenToOnce
+syntax keyword jsBModel contained extend constructor initialize get set escape has unset clear
+syntax keyword jsBModel contained toJSON sync fetch save destroy validate validationError url parse
+syntax keyword jsBModel contained clone isNew hasChanged changedAttributes previous previousAttributes
+syntax keyword jsBCollection contained extend constructor initialize toJSON sync add remove reset set get at 
+syntax keyword jsBCollection contained push pop unshift shift slice length comparator sort pluck where 
+syntax keyword jsBCollection contained findWhere url parse clone fetch create
+syntax keyword jsBRouter contained extend constructor initialize route navigate execute
+syntax keyword jsBHistory contained start
+syntax keyword jsBSync contained ajax 
+syntax keyword jsBView contained extend constructor initialize setElement render remove delegateEvents undelegateEvents
+syntax keyword jsBUtility contained noConflict 
 
-syntax keyword javascriptBModelAttrs contained id idAttribute cid attributes changed defaults urlRoot
-syntax keyword javascriptBCollectionAttrs contained model modelId models length comparator url
-syntax keyword javascriptBRouterAttrs contained routes
-syntax keyword javascriptBViewAttrs contained el attributes events
-syntax keyword javascriptBViewAttrs match /$el/
-syntax keyword javascriptBViewAttrs match /$/
+syntax keyword jsBModelAttrs contained id idAttribute cid attributes changed defaults urlRoot
+syntax keyword jsBCollectionAttrs contained model modelId models length comparator url
+syntax keyword jsBRouterAttrs contained routes
+syntax keyword jsBViewAttrs contained el attributes events
+syntax keyword jsBViewAttrs match /$el/
+syntax keyword jsBViewAttrs match /$/
 
 
 " Define the default highlighting.
 " For version 5.7 and earlier: only when not done already
 " For version 5.8 and later: only when an item doesn't have highlighting yet
-if version >= 508 || !exists("did_backbone_javascript_syntax_inits")
+if version >= 508 || !exists("did_backbone_js_syntax_inits")
   if version < 508
-    let did_backbone_javascript_syntax_inits = 1
+    let did_backbone_js_syntax_inits = 1
     command -nargs=+ HiLink hi link <args>
   else
     command -nargs=+ HiLink hi def link <args>
   endif
 
   HiLink jsBackbone         Constant
-  HiLink javascriptBObjects         Constant
+  HiLink jsBObjects         Constant
 
-  HiLink javascriptBEvents          PreProc
-  HiLink javascriptBModel           PreProc
-  HiLink javascriptBCollection      PreProc
-  HiLink javascriptBRouter          PreProc
-  HiLink javascriptBHistory         PreProc
-  HiLink javascriptBSync            PreProc
-  HiLink javascriptBView            PreProc
-  HiLink javascriptBUtility         PreProc
+  HiLink jsBEvents          PreProc
+  HiLink jsBModel           PreProc
+  HiLink jsBCollection      PreProc
+  HiLink jsBRouter          PreProc
+  HiLink jsBHistory         PreProc
+  HiLink jsBSync            PreProc
+  HiLink jsBView            PreProc
+  HiLink jsBUtility         PreProc
 
-  HiLink javascriptBModelAttrs      PreProc
-  HiLink javascriptBCollectionAttrs PreProc
-  HiLink javascriptBRouterAttrs     PreProc
-  HiLink javascriptBSyncAttrs       PreProc
-  HiLink javascriptBViewAttrs       PreProc
+  HiLink jsBModelAttrs      PreProc
+  HiLink jsBCollectionAttrs PreProc
+  HiLink jsBRouterAttrs     PreProc
+  HiLink jsBSyncAttrs       PreProc
+  HiLink jsBViewAttrs       PreProc
 
 
   delcommand HiLink

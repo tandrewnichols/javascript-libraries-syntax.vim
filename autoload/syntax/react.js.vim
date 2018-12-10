@@ -7,52 +7,52 @@
 " URL:         https://facebook.github.io/react/docs/react-component.html
 " URL:         https://facebook.github.io/react/docs/component-api.html
 
-syntax keyword jsReact      React containedin=ALLBUT,jsComment,jsLineComment,jsRegexpString,jsString,jsTemplate,jsTemplateSubstitution nextgroup=javascriptRDot
-syntax match   javascriptRDot       contained /\./ nextgroup=javascriptRProps,javascriptRMethods
+syntax keyword jsReact      React containedin=ALLBUT,jsComment,jsLineComment,jsRegexpString,jsString,jsTemplate,jsTemplateSubstitution nextgroup=jsRDot
+syntax match   jsRDot       contained /\./ nextgroup=jsRProps,jsRMethods
 
-syntax keyword jsReact      ReactDOM containedin=ALLBUT,jsComment,jsLineComment,jsRegexpString,jsString,jsTemplate,jsTemplateSubstitution nextgroup=javascriptRDDot
-syntax match   javascriptRDDot      contained /\./ nextgroup=javascriptRDMethods
+syntax keyword jsReact      ReactDOM containedin=ALLBUT,jsComment,jsLineComment,jsRegexpString,jsString,jsTemplate,jsTemplateSubstitution nextgroup=jsRDDot
+syntax match   jsRDDot      contained /\./ nextgroup=jsRDMethods
 
-syntax keyword jsReact      ReactDOMServer containedin=ALLBUT,jsComment,jsLineComment,jsRegexpString,jsString,jsTemplate,jsTemplateSubstitution nextgroup=javascriptRDSDot
-syntax match   javascriptRDSDot     contained /\./ nextgroup=javascriptRDSMethods
+syntax keyword jsReact      ReactDOMServer containedin=ALLBUT,jsComment,jsLineComment,jsRegexpString,jsString,jsTemplate,jsTemplateSubstitution nextgroup=jsRDSDot
+syntax match   jsRDSDot     contained /\./ nextgroup=jsRDSMethods
 
 " React
-syntax keyword javascriptRProps     Component nextgroup=javascriptRCompMethods
-syntax keyword javascriptRProps     PureComponent Children addons
-syntax keyword javascriptRProps     PropTypes nextgroup=javascriptRPropDot
-syntax match   javascriptRPropDot   contained /\./ nextgroup=javascriptRPropProps,javascriptRPropMethods
+syntax keyword jsRProps     Component nextgroup=jsRCompMethods
+syntax keyword jsRProps     PureComponent Children addons
+syntax keyword jsRProps     PropTypes nextgroup=jsRPropDot
+syntax match   jsRPropDot   contained /\./ nextgroup=jsRPropProps,jsRPropMethods
 
-syntax keyword javascriptRMethods   createClass createElement createFactory
-syntax keyword javascriptRMethods   cloneElement isValidElement
+syntax keyword jsRMethods   createClass createElement createFactory
+syntax keyword jsRMethods   cloneElement isValidElement
 
 " ReactDOM
-syntax keyword javascriptRDMethods  render unmountComponentAtNode findDOMNode
+syntax keyword jsRDMethods  render unmountComponentAtNode findDOMNode
 
 " ReactDOMServer
-syntax keyword javascriptRDMethods  renderToString renderToStaticMarkup 
+syntax keyword jsRDMethods  renderToString renderToStaticMarkup 
 
 " React.Component
-syntax keyword javascriptRCompMethods contained componentWillMount render componentDidMount
-syntax keyword javascriptRCompMethods contained componentWillReceiveProps shouldComponentUpdate componentWillUpdate render componentDidUpdate
-syntax keyword javascriptRCompMethods contained componentWillUnmount
-syntax keyword javascriptRCompMethods contained setState forceUpdate
-syntax keyword javascriptRCompProps   contained defaultProps displayName propTypes
+syntax keyword jsRCompMethods contained componentWillMount render componentDidMount
+syntax keyword jsRCompMethods contained componentWillReceiveProps shouldComponentUpdate componentWillUpdate render componentDidUpdate
+syntax keyword jsRCompMethods contained componentWillUnmount
+syntax keyword jsRCompMethods contained setState forceUpdate
+syntax keyword jsRCompProps   contained defaultProps displayName propTypes
 
 " React.PropTypes
-syntax keyword javascriptRPropProps   contained array bool func number object string symbol node element isRequired
-syntax keyword javascriptRPropMethods contained instanceOf oneOf oneOfType arrayOf objectOf shape any
+syntax keyword jsRPropProps   contained array bool func number object string symbol node element isRequired
+syntax keyword jsRPropMethods contained instanceOf oneOf oneOfType arrayOf objectOf shape any
 
 
-syntax cluster javascriptRFunctions   contains=javascriptRMethods,javascriptRDMethods,javascriptRCompMethods,javascriptRPropMethods
-syntax cluster javascriptRAttrs       contains=javascriptRProps,javascriptRCompProps,javascriptRPropProps
+syntax cluster jsRFunctions   contains=jsRMethods,jsRDMethods,jsRCompMethods,jsRPropMethods
+syntax cluster jsRAttrs       contains=jsRProps,jsRCompProps,jsRPropProps
 
 
 " Define the default highlighting.
 " For version 5.7 and earlier: only when not done already
 " For version 5.8 and later: only when an item doesn't have highlighting yet
-if version >= 508 || !exists("did_jquery_javascript_syntax_inits")
+if version >= 508 || !exists("did_jquery_js_syntax_inits")
   if version < 508
-    let did_jquery_javascript_syntax_inits = 1
+    let did_jquery_js_syntax_inits = 1
     command -nargs=+ HiLink hi link <args>
   else
     command -nargs=+ HiLink hi def link <args>
@@ -60,13 +60,13 @@ if version >= 508 || !exists("did_jquery_javascript_syntax_inits")
 
   HiLink jsReact           Constant
 
-  HiLink javascriptRProps          PreProc
-  HiLink javascriptRDMethods       PreProc
-  HiLink javascriptRCompMethods    PreProc
-  HiLink javascriptRPropMethods    PreProc
-  HiLink javascriptRProps          PreProc
-  HiLink javascriptRCompProps      PreProc
-  HiLink javascriptRPropProps      PreProc
+  HiLink jsRProps          PreProc
+  HiLink jsRDMethods       PreProc
+  HiLink jsRCompMethods    PreProc
+  HiLink jsRPropMethods    PreProc
+  HiLink jsRProps          PreProc
+  HiLink jsRCompProps      PreProc
+  HiLink jsRPropProps      PreProc
 
   delcommand HiLink
 endif

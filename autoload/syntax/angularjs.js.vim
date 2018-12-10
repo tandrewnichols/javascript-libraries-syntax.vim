@@ -13,89 +13,89 @@ syntax keyword jsAngularMethods contained isArray isDate isDefined isElement isF
 syntax keyword jsAngularMethods contained isNumber isObject isString isUndefined lowercase
 syntax keyword jsAngularMethods contained mock module noop toJson uppercase version
 
-syntax keyword javascriptAServices containedin=ALLBUT,jsComment,jsLineComment,jsRegexpString,jsString $anchorScroll $cacheFactory $compile $controller $document
-syntax keyword javascriptAServices containedin=ALLBUT,jsComment,jsLineComment,jsRegexpString,jsString $exceptionHandler $filter $httpBackend
-syntax keyword javascriptAServices containedin=ALLBUT,jsComment,jsLineComment,jsRegexpString,jsString $locale $parse $rootElement
-syntax keyword javascriptAServices containedin=ALLBUT,jsComment,jsLineComment,jsRegexpString,jsString $routeParams $templateCache $window 
-syntax keyword javascriptAServices containedin=ALLBUT,jsComment,jsLineComment,jsRegexpString,jsString $cookies $resource $sanitize
-syntax keyword javascriptAServices containedin=ALLBUT,jsComment,jsLineComment,jsRegexpString,jsString $element
+syntax keyword jsAServices containedin=ALLBUT,jsComment,jsLineComment,jsRegexpString,jsString $anchorScroll $cacheFactory $compile $controller $document
+syntax keyword jsAServices containedin=ALLBUT,jsComment,jsLineComment,jsRegexpString,jsString $exceptionHandler $filter $httpBackend
+syntax keyword jsAServices containedin=ALLBUT,jsComment,jsLineComment,jsRegexpString,jsString $locale $parse $rootElement
+syntax keyword jsAServices containedin=ALLBUT,jsComment,jsLineComment,jsRegexpString,jsString $routeParams $templateCache $window 
+syntax keyword jsAServices containedin=ALLBUT,jsComment,jsLineComment,jsRegexpString,jsString $cookies $resource $sanitize
+syntax keyword jsAServices containedin=ALLBUT,jsComment,jsLineComment,jsRegexpString,jsString $element
 
-syntax keyword javascriptAServices containedin=ALLBUT,jsComment,jsLineComment,jsRegexpString,jsString $attributes nextgroup=javascriptASattributesdot
-syntax match   javascriptASattributesdot contained /\./ nextgroup=javascriptASattributesMethods
-syntax keyword javascriptASattributesMethods contained $normalize $addClass $removeClass $updateClass $observe $set $attr
+syntax keyword jsAServices containedin=ALLBUT,jsComment,jsLineComment,jsRegexpString,jsString $attributes nextgroup=jsASattributesdot
+syntax match   jsASattributesdot contained /\./ nextgroup=jsASattributesMethods
+syntax keyword jsASattributesMethods contained $normalize $addClass $removeClass $updateClass $observe $set $attr
 
-syntax keyword javascriptAServices containedin=ALLBUT,jsComment,jsLineComment,jsRegexpString,jsString $http nextgroup=javascriptAShttpdot
-syntax match   javascriptAShttpdot contained /\./ nextgroup=javascriptAShttpMethods
-syntax keyword javascriptAShttpMethods contained get head post put delete jsonp defaults prendingRequests 
+syntax keyword jsAServices containedin=ALLBUT,jsComment,jsLineComment,jsRegexpString,jsString $http nextgroup=jsAShttpdot
+syntax match   jsAShttpdot contained /\./ nextgroup=jsAShttpMethods
+syntax keyword jsAShttpMethods contained get head post put delete jsonp defaults prendingRequests 
 
-syntax keyword javascriptAServices containedin=ALLBUT,jsComment,jsLineComment,jsRegexpString,jsString $interpolate nextgroup=javascriptASinterpolatedot
-syntax match   javascriptASinterpolatedot contained /\./ nextgroup=javascriptASinterpolateMethods
-syntax keyword javascriptASinterpolateMethods contained endSymbol startSymbol
+syntax keyword jsAServices containedin=ALLBUT,jsComment,jsLineComment,jsRegexpString,jsString $interpolate nextgroup=jsASinterpolatedot
+syntax match   jsASinterpolatedot contained /\./ nextgroup=jsASinterpolateMethods
+syntax keyword jsASinterpolateMethods contained endSymbol startSymbol
 
-syntax keyword javascriptAServices containedin=ALLBUT,jsComment,jsLineComment,jsRegexpString,jsString $location nextgroup=javascriptASlocationdot
-syntax match   javascriptASlocationdot contained /\./ nextgroup=javascriptASlocationMethods
-syntax keyword javascriptASlocationMethods contained absUrl hash host path port protocol replace search url
+syntax keyword jsAServices containedin=ALLBUT,jsComment,jsLineComment,jsRegexpString,jsString $location nextgroup=jsASlocationdot
+syntax match   jsASlocationdot contained /\./ nextgroup=jsASlocationMethods
+syntax keyword jsASlocationMethods contained absUrl hash host path port protocol replace search url
 
-syntax keyword javascriptAServices containedin=ALLBUT,jsComment,jsLineComment,jsRegexpString,jsString $log nextgroup=javascriptASlogdot
-syntax match   javascriptASlogdot contained /\./ nextgroup=javascriptASlogMethods
-syntax keyword javascriptASlogMethods contained error info log warn
+syntax keyword jsAServices containedin=ALLBUT,jsComment,jsLineComment,jsRegexpString,jsString $log nextgroup=jsASlogdot
+syntax match   jsASlogdot contained /\./ nextgroup=jsASlogMethods
+syntax keyword jsASlogMethods contained error info log warn
 
-syntax keyword javascriptAServices containedin=ALLBUT,jsComment,jsLineComment,jsRegexpString,jsString $q nextgroup=javascriptASqdot
-syntax match   javascriptASqdot contained /\./ nextgroup=javascriptASqMethods
-syntax keyword javascriptASqMethods contained all defer reject when
+syntax keyword jsAServices containedin=ALLBUT,jsComment,jsLineComment,jsRegexpString,jsString $q nextgroup=jsASqdot
+syntax match   jsASqdot contained /\./ nextgroup=jsASqMethods
+syntax keyword jsASqMethods contained all defer reject when
 
-syntax keyword javascriptAServices containedin=ALLBUT,jsComment,jsLineComment,jsRegexpString,jsString $route nextgroup=javascriptASroutedot
-syntax match   javascriptASroutedot contained /\./ nextgroup=javascriptASrouteMethods
-syntax keyword javascriptASrouteMethods contained reload current route
+syntax keyword jsAServices containedin=ALLBUT,jsComment,jsLineComment,jsRegexpString,jsString $route nextgroup=jsASroutedot
+syntax match   jsASroutedot contained /\./ nextgroup=jsASrouteMethods
+syntax keyword jsASrouteMethods contained reload current route
 
-syntax keyword javascriptAServices containedin=ALLBUT,jsComment,jsLineComment,jsRegexpString,jsString $timeout nextgroup=javascriptAStimeoutdot
-syntax match   javascriptAStimeoutdot contained /\./ nextgroup=javascriptAStimeoutMethods
-syntax keyword javascriptAStimeoutMethods contained cancel
+syntax keyword jsAServices containedin=ALLBUT,jsComment,jsLineComment,jsRegexpString,jsString $timeout nextgroup=jsAStimeoutdot
+syntax match   jsAStimeoutdot contained /\./ nextgroup=jsAStimeoutMethods
+syntax keyword jsAStimeoutMethods contained cancel
 
-syntax keyword javascriptAServices containedin=ALLBUT,jsComment,jsLineComment,jsRegexpString,jsString $scope $rootScope nextgroup=javascriptASscopedot
-syntax match   javascriptASscopedot contained /\./ nextgroup=javascriptASscopeMethods
-syntax keyword javascriptASscopeMethods contained $apply $broadcast $destroy $digest $emit $eval $evalAsync $new $on $watch $id
+syntax keyword jsAServices containedin=ALLBUT,jsComment,jsLineComment,jsRegexpString,jsString $scope $rootScope nextgroup=jsASscopedot
+syntax match   jsASscopedot contained /\./ nextgroup=jsASscopeMethods
+syntax keyword jsASscopeMethods contained $apply $broadcast $destroy $digest $emit $eval $evalAsync $new $on $watch $id
 
-syntax keyword javascriptAServices containedin=ALLBUT,jsComment,jsLineComment,jsRegexpString,jsString $cookieStore nextgroup=javascriptAScookieStoredot
-syntax match   javascriptAScookieStoredot contained /\./ nextgroup=javascriptAScookieStoreMethods
-syntax keyword javascriptAScookieStoreMethods contained get put remove
+syntax keyword jsAServices containedin=ALLBUT,jsComment,jsLineComment,jsRegexpString,jsString $cookieStore nextgroup=jsAScookieStoredot
+syntax match   jsAScookieStoredot contained /\./ nextgroup=jsAScookieStoreMethods
+syntax keyword jsAScookieStoreMethods contained get put remove
 
-syntax cluster javascriptAFunctions contains=javascriptAMFunctions
-syntax cluster javascriptAAttrs contains=javascriptAMAttrs
+syntax cluster jsAFunctions contains=jsAMFunctions
+syntax cluster jsAAttrs contains=jsAMAttrs
 
-syntax keyword javascriptAMFunctions contained config constant controller component directive
-syntax keyword javascriptAMFunctions contained factory filter provider run service value
-syntax keyword javascriptAMAttrs contained name requires
+syntax keyword jsAMFunctions contained config constant controller component directive
+syntax keyword jsAMFunctions contained factory filter provider run service value
+syntax keyword jsAMAttrs contained name requires
 
 
 " Define the default highlighting.
 " For version 5.7 and earlier: only when not done already
 " For version 5.8 and later: only when an item doesn't have highlighting yet
-if version >= 508 || !exists("did_angularjs_javascript_syntax_inits")
+if version >= 508 || !exists("did_angularjs_js_syntax_inits")
   if version < 508
-    let did_angularjs_javascript_syntax_inits = 1
+    let did_angularjs_js_syntax_inits = 1
     command -nargs=+ HiLink hi link <args>
   else
     command -nargs=+ HiLink hi def link <args>
   endif
 
   HiLink jsAngular         Constant
-  HiLink javascriptAServices       Constant
+  HiLink jsAServices       Constant
 
   HiLink jsAngularMethods  PreProc
-  HiLink javascriptAMFunctions     PreProc
-  HiLink javascriptAMAttrs         PreProc
+  HiLink jsAMFunctions     PreProc
+  HiLink jsAMAttrs         PreProc
 
-  HiLink javascriptASattributesMethods  PreProc
-  HiLink javascriptAShttpMethods        PreProc
-  HiLink javascriptASinterpolateMethods PreProc
-  HiLink javascriptASlocationMethods    PreProc
-  HiLink javascriptASlogMethods         PreProc
-  HiLink javascriptASqMethods           PreProc
-  HiLink javascriptASrouteMethods       PreProc
-  HiLink javascriptAStimeoutMethods     PreProc
-  HiLink javascriptASscopeMethods       PreProc
-  HiLink javascriptAScookieStoreMethods PreProc
+  HiLink jsASattributesMethods  PreProc
+  HiLink jsAShttpMethods        PreProc
+  HiLink jsASinterpolateMethods PreProc
+  HiLink jsASlocationMethods    PreProc
+  HiLink jsASlogMethods         PreProc
+  HiLink jsASqMethods           PreProc
+  HiLink jsASrouteMethods       PreProc
+  HiLink jsAStimeoutMethods     PreProc
+  HiLink jsASscopeMethods       PreProc
+  HiLink jsAScookieStoreMethods PreProc
 
   delcommand HiLink
 endif

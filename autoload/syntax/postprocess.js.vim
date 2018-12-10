@@ -3,16 +3,16 @@
 " Maintainer:  othree <othree@gmail.com>
 " Last Change: 2016/10/07
 " Version:     0.5
-" URL:         https://github.com/othree/javascript-libraries-syntax.vim
+" URL:         https://github.com/othree/js-libraries-syntax.vim
 "
 
-syntax cluster props add=@javascriptQFunctions,@javascript_Functions,@javascriptBFunctions
-syntax cluster props add=@javascriptpFunctions,@javascriptAFunctions,@javascriptSFunctions,@javascriptJFunctions
+syntax cluster props add=@jsQFunctions,@js_Functions,@jsBFunctions
+syntax cluster props add=@jspFunctions,@jsAFunctions,@jsSFunctions,@jsJFunctions
 syntax cluster props add=@jsRaFunctions
-syntax cluster props add=@javascriptQAttrs,@javascript_Attrs,@javascriptBAttrs,@javascriptpAttrs,@javascriptAAttrs,@javascriptJAttrs
-syntax cluster props add=@javascriptRFunctions,@gavascriptRAttrs
-syntax cluster props add=@javascriptVFunctions,javascriptVAttrs
+syntax cluster props add=@jsQAttrs,@js_Attrs,@jsBAttrs,@jspAttrs,@jsAAttrs,@jsJAttrs
+syntax cluster props add=@jsRFunctions,@gavascriptRAttrs
+syntax cluster props add=@jsVFunctions,jsVAttrs
 
-if !exists("javascript_props")
-  syntax match javascriptLDot /\./ containedin=ALLBUT,jsComment,jsLineComment,jsLineComment,jsRegexpString,jsString nextgroup=@props
+if !exists("js_props")
+  syntax match jsLDot /\./ containedin=ALLBUT,jsComment,jsLineComment,jsLineComment,jsRegexpString,jsString nextgroup=@props
 endif
