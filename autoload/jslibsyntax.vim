@@ -40,6 +40,8 @@ function! jslibsyntax#load()
     let g:used_javascript_libs = join(s:default_libs, ',')
   endif
 
+  let short = get(g:, 'javascript_short_syntax', 0)
+  let syntax = short && b:current_syntax ==? 'javascript' ? 'js' : b:current_syntax
   let index = 0
   let loaded = 0
   while index < len(s:libs)
@@ -49,7 +51,6 @@ function! jslibsyntax#load()
       exec('let use = b:javascript_lib_use_'.lib)
     endif
     if use
-      let syntax = get(g:, 'javascript_short_syntax', 0) && b:current_syntax ==? 'javascript' ? 'js' : b:current_syntax
       let fn = s:path.'/syntax/'.lib.'.'.syntax.'.vim'
       if filereadable(fn)
         exe('source '.fnameescape(fn))
@@ -58,9 +59,9 @@ function! jslibsyntax#load()
     endif
     let index = index + 1
   endwhile
-  let fn = s:path.'/syntax/postprocess.'.b:current_syntax.'.vim'
-  if loaded > 0 && filereadable(fn)
-    exe('source '.fnameescape(fn))
-  endif
+  " let fn = s:path.'/syntax/postprocess.'.syntax.'.vim'
+  " if loaded > 0 && filereadable(fn)
+  "   exe('source '.fnameescape(fn))
+  " endif
 endfunction
 
