@@ -15,4 +15,7 @@ syntax cluster props add=@jsVFunctions,jsVAttrs
 
 if !exists("js_props")
   syntax match jsLDot /\./ containedin=ALLBUT,jsComment,jsLineComment,jsLineComment,jsRegexpString,jsString nextgroup=@props
+
+  syntax region  jsSpreadExpression   contained matchgroup=jsSpreadOperator      start=/\.\.\./ end=/[,}\]]\@=/ contains=@jsExpression
+  hi def link jsSpreadOperator       Operator
 endif

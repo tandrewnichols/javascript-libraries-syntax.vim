@@ -63,8 +63,4 @@ function! jslibsyntax#load()
   if loaded > 0 && filereadable(fn)
     exe('source '.fnameescape(fn))
   endif
-
-  syntax region  jsSpreadExpression   contained matchgroup=jsSpreadOperator      start=/\.\.\./ end=/[,}\]]\@=/ contains=@jsExpression
-  hi def link jsSpreadOperator       Operator
 endfunction
-
