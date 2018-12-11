@@ -59,9 +59,12 @@ function! jslibsyntax#load()
     endif
     let index = index + 1
   endwhile
-  " let fn = s:path.'/syntax/postprocess.'.syntax.'.vim'
-  " if loaded > 0 && filereadable(fn)
-  "   exe('source '.fnameescape(fn))
-  " endif
+  let fn = s:path.'/syntax/postprocess.'.syntax.'.vim'
+  if loaded > 0 && filereadable(fn)
+    exe('source '.fnameescape(fn))
+  endif
+
+  syntax region  jsSpreadExpression   contained matchgroup=jsSpreadOperator      start=/\.\.\./ end=/[,}\]]\@=/ contains=@jsExpression
+  hi def link jsSpreadOperator       Operator
 endfunction
 
